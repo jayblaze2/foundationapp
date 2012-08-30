@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foundationapp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+	<script type="text/javascript">
+	  $(document).ready(function() {
+	    $('#buttonForModal').click(function() {
+	      $('#myModal').reveal();
+	    });
+	  });
+	</script>
+</head>
+<body>
+
+<div class="row">
+	<ul class="nav-bar">
+	  <li class="active"><a href="#">Nav Item 1</a></li>
+	  <li class="has-flyout">
+	    <a href="#">Nav Item 2</a>
+	    <a href="#" class="flyout-toggle"><span> </span></a>
+	    <ul class="flyout">
+	      <li><a href="#">Sub Nav 1</a></li>
+	      <li><a href="#">Sub Nav 2</a></li>
+	      <li><a href="#">Sub Nav 3</a></li>
+	    </ul>
+	  </li>
+	</ul>
+</div>
+
+<div class="row">
+	<div class="eight columns"><%= yield %></div>
+	<div class="four columns">
+		<a href="#" id="buttonForModal" class="[radius, round] button">Button Text</a>
+	</div>
+</div>
+<div id="myModal" class="reveal-modal">
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  I it's mine.</p>
+  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+</body>
+</html>
